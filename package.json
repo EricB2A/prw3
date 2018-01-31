@@ -1,0 +1,22 @@
+{
+  "name": "prw3",
+  "version": "1.0.0",
+  "description": "_Project description_   ## Build with ## Getting started ### Prerequisites // Node  // Python3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricBroutba/prw3.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EricBroutba/prw3/issues"
+  },
+  "homepage": "https://github.com/EricBroutba/prw3#readme",
+  "dependencies": {
+    "xml2json": "^0.11.0"
+  }
+}
