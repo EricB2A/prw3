@@ -1,12 +1,10 @@
 # PRW3 - Activity Visualisation
-_Project description_  
-## Build with
-## Getting started
-### Prerequisites
+_Project description_    
+## Built with  
+### Prerequisites  
 // Node 
-// Python3  
-
-### Installing
+// Python3   
+### Installation 
 ## Data
 ### Sources
 ### Processing
