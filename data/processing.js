@@ -20,4 +20,3 @@ function parseJson(raw_json){
 fs.readFile('data/raw/export.xml', (err, data) => {
     parseJson(parser.toJson(data));
 });
-console.log('done');
