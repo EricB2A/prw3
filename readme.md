@@ -8,9 +8,33 @@ _The objective of this project is to **self-quantifiy** and **interact** with ou
 ### Prerequisites  
 * [NodeJS](https://nodejs.org/en/) _(version used: 8.9.4)_  
 
-### Installation 
-npm run dev  
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
+```
+
 ## Data
+To manually process the data, use the (processing script)[data/processing.js] with  
+```bash
+node data/processing.js  
+```
 
 ### Sources
 
