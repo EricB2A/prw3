@@ -1,5 +1,5 @@
 # PRW3 - Activity Visualisation
-_The objective of this project is to **self-quantifiy** and **interact** with our daily **activitiy data**._  
+_The objective of this project is to **self-quantifiy** and **interact** with our daily **activitiy data**._   
 
 ## Built with   
 * [VueJS](https://vuejs.org/)  
@@ -31,7 +31,7 @@ npm test
 ```
 
 ## Data
-To manually process the data, use the (processing script)[data/processing.js] with  
+To manually process the data, use the [processing script](data/processing.js) with  
 ```bash
 node data/processing.js  
 ```
