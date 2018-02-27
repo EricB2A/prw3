@@ -3,6 +3,7 @@ const parser = require('xml2json');
 const moment = require('moment');
 const _ = require('lodash');
 
+
 function loopObject(data_object){
     let last_datetime = moment('1970-01-01', 'YYYY-MM-DD'); // group activity per day
     let activity_count = 0; // activity count for each day
@@ -10,13 +11,24 @@ function loopObject(data_object){
     for(let key in data_object){ // looping through our big boy
         if(data_object.hasOwnProperty(key)){
             if(data_object[key]['type'] === 'HKQuantityTypeIdentifierDistanceWalkingRunning'){ // we only keep the walked distance
-                let current_datetime = moment(data_object[key]['startDate'], 'YYYY-MM-DD');
+                let current_datetime = moment(data_object[key]['startDate'], 'YYYY-MM');
+                if(result[current_datetime.unix()] != undefined){
+                    result[current_datetime.unix()] += parseFloat(data_object[key]['value']);
+                }else{
+                    result[current_datetime.unix()] = 0;
+                }
+
+                /*
                 if(current_datetime.diff(last_datetime, 'months')){ // If we are in a new day
+                    console.log("new");
+                    //console.log(last_datetime)
                     result[current_datetime.unix()] = activity_count; // store result
                     last_datetime = current_datetime;
                     activity_count = 0;
                 }
                 activity_count += parseFloat(data_object[key]['value']) // get the walked distance on this day
+                */
+
             }
         }
     }
