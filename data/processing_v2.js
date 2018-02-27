@@ -11,7 +11,7 @@ function loopObject(data_object){
         if(data_object.hasOwnProperty(key)){
             if(data_object[key]['type'] === 'HKQuantityTypeIdentifierDistanceWalkingRunning'){ // we only keep the walked distance
                 let current_datetime = moment(data_object[key]['startDate'], 'YYYY-MM-DD');
-                if(current_datetime.diff(last_datetime, 'months')){ // If we are in a new day
+                if(current_datetime.diff(last_datetime, 'days')){ // If we are in a new day
                     result[current_datetime.unix()] = activity_count; // store result
                     last_datetime = current_datetime;
                     activity_count = 0;
@@ -44,6 +44,14 @@ function parseJson(raw_json){
         console.error('error while processing...');
         console.error(err);
     });
+
+    /*
+    json.HealthData.Record.forEach(element => {
+        console.log(element);
+        console.log("**");
+
+    });
+    */
 }
 // converts xml to json
 fs.readFile('data/raw/export.xml', (err, data) => {
