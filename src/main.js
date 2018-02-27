@@ -3,18 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// TODO: use config for filepath
-import activityData from '../data/processed/processed.json'
 
 Vue.config.productionTip = false
 
+// TODO: use config for filepath
+import activityData from '../data/processed/processed.json'
+
 /* eslint-disable no-new */
-new Vue({
+let vue = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>',
-  data: activityData
+  data: {
+    activityData: ''
+  },
 })
-
-// vue.activityData = activityData
+vue.activityData = activityData;
