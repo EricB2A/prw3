@@ -17,6 +17,6 @@ let vue = new Vue({
   template: '<App/>',
   data: {
     activityData: ''
-  },
+  }
 })
-vue.activityData = activityData;
+vue.activityData = activityData

@@ -6,8 +6,7 @@ _The objective of this project is to **self-quantifiy** and **interact** with ou
 * [...]()  
 
 ### Prerequisites  
-* [NodeJS](https://nodejs.org/en/) _(version used: 8.9.4)_  
-
+* [NodeJS](https://nodejs.org/en/) _(version used: **8.9.4** with npm **5.6.0**)_ 
 ## Build Setup
 
 ``` bash
