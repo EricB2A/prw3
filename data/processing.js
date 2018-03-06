@@ -11,7 +11,7 @@ function loopObject(data_object){
     for(let key in data_object){ // looping through our big boy
         if(data_object.hasOwnProperty(key)){
             if(data_object[key]['type'] === 'HKQuantityTypeIdentifierDistanceWalkingRunning'){ // we only keep the walked distance
-                let current_datetime = moment(data_object[key]['startDate'], 'YYYY-MM-YY');
+                let current_datetime = moment(data_object[key]['startDate'], 'YYYY-MM-DD');
                 if(result[current_datetime.unix()] != undefined){
                     result[current_datetime.unix()] += parseFloat(data_object[key]['value']);
                 }else{
@@ -43,7 +43,7 @@ function convertTimestampKeys(obj){
     const result = {};
     for(let key in obj){
         if(obj.hasOwnProperty(key)){
-            result[moment.unix(key).format("YYYY-MM")] = obj[key];
+            result[moment.unix(key).format("YYYY-MM-DD")] = obj[key];
             // console.log(obj[key])
         }
     }
