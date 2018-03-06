@@ -45,3 +45,5 @@ This project is licensed under the MIT License - see the [license](license) for 
 ## Todo
 * Import tutorial
 * Import form 
+* Change format 
+* Make bullet clickable
