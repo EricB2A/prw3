@@ -40,7 +40,6 @@ export default class {
             FORMAT 2 : YYYY-MM    (MONTH)
             FORMAT 3 : YYYY       (YEAR)
         */
-        console.log("in ! ")
         let moment = require('moment');
 
         if(typeof format === "undefined"){
@@ -54,13 +53,10 @@ export default class {
         let old_dataset = data_object.datasets[0].data;
 
         let temp = {}
-        console.log(old_labels);
-        console.log(old_dataset);
-        format = "YY-MM"
 
+        // sort per new date format
         for(let index in old_labels){ 
-            console.log(typeof old_dataset[index]);
-            if(temp[ moment(old_labels[index]).format(format) ]){
+            if(temp[ moment(old_labels[index]).format(format) ] == undefined){
                 temp[moment(old_labels[index]).format(format)] = old_dataset[index]
             }else{
                 temp[moment(old_labels[index]).format(format)] += old_dataset[index]
@@ -68,10 +64,19 @@ export default class {
 
 
         }        
-        console.log("CURSED WORD") 
-        console.log(temp);
 
-        data_object.label = new_labels;
-        data_object.datasets[0] = new_datasets;
+        // re-index
+        let i = 0;
+        for(let key in temp){
+            new_labels[i] = key;
+            new_datasets[i] = temp[key]; 
+            i += 1;
+        }
+
+        // re-assign the data_object labels and dataset
+        data_object.labels = new_labels;
+        data_object.datasets[0].data = new_datasets;
+
+        return data_object;
     }
 }
