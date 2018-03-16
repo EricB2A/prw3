@@ -1,49 +1,19 @@
 # PRW3 - Activity Visualisation
 _The objective of this project is to **self-quantifiy** and **interact** with our daily **activitiy data**._   
+## Getting started :fire:
+Simply open [index.html](index.html) in your browser.  
+If you have the error `Failed to load... : Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.`, use  
+`python -m SimpleHTTPServer`.   
+and then go to [http://localhost:8000](http://localhost:8000).  
 
-## Built with   
-* [VueJS](https://vuejs.org/)  
-* [...]()  
+If you don't have python, you can use the php alternative.  
+`php -S localhost:8000`.  
 
-### Prerequisites  
-* [NodeJS](https://nodejs.org/en/) _(version used: **8.9.4** with npm **5.6.0**)_ 
-## Build Setup
+If you don't have php, use the Firefox browser.  
 
-``` bash
-# install dependencies
-npm install
+## Built with :muscle:
+* [momentJS](https://momentjs.com) - For dates manipulation
+* [chartJS](http://www.chartjs.org/) - For chart templates
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-## Data
-To manually process the data, use the [processing script](data/processing.js) with  
-```bash
-node data/processing.js  
-```
-
-### Sources
-
-### Processing
-
-## License
-This project is licensed under the MIT License - see the [license](license) for details.
-
-## Todo
-* Import tutorial
-* Import form 
-* Change format 
-* Make bullet clickable
+## License :book:
+This project is licensed under the MIT License - see the [license.md](license.md) file for details
