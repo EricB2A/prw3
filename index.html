@@ -6,7 +6,21 @@
     <title>prw3</title>
   </head>
   <body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/locale/fr-ch.js"></script> -->
+    <script src="moment.js"></script>
+    <script src="helper.js"></script>
+
     <div id="app"></div>
+
+    <button onclick="changeFormat('YYYY-MM-DD')">YYYY-MM-DD</button>
+    <button onclick="changeFormat('YYYY-MM')">YYYY-MM</button>
+    <button onclick="changeFormat('YYYY')">YYYY</button>
+
+    <canvas id="dataVisualisation" width="400" height="400"></canvas>
+
+    <script src="run.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>
