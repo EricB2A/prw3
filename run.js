@@ -1,15 +1,11 @@
 Helper.loadJSON(function(rawData){
   var activityData = Helper.restructure(JSON.parse(rawData));
-  console.log(activityData);
   displayChart(activityData);
 });
 
 function changeFormat(newFormat){
   Helper.loadJSON(function(rawData){
-
     let newData = Helper.groupDataBy(Helper.restructure(JSON.parse(rawData)), newFormat);
-    console.log("new data wuth " + newFormat)
-    console.log(rawData)
     displayChart(newData);
 
   });
@@ -19,7 +15,6 @@ function changeFormat(newFormat){
 function displayChart(data){
   var ctx = document.getElementById("dataVisualisation").getContext("2d");
   //TODO: delete if already exists.
-  console.log(data);
   var options = {
     scales: {
       yAxes: [{
@@ -49,4 +44,20 @@ function displayChart(data){
     options: options
   });
   console.log("running...");
+}
+
+function useUserData(){
+  var input = document.getElementById("userXML");
+  var reader = new FileReader();
+  reader.readAsText(input.files[0], "UTF-8");
+  reader.onload = function(evt){
+    // change form XML to json
+    var data = evt.target.result;
+    if (Helper.isJsonValid(data)){ // valid
+      var activityData = Helper.restructure(JSON.parse(data));
+      displayChart(activityData);
+    }else{
+     console.log("USER DATA not valid"); //TODO: show message 
+    } 
+  }
 }

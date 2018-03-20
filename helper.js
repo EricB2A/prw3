@@ -93,4 +93,12 @@ class Helper {
       return data_object;
   }
 
+  static isJsonValid(json){
+    try{
+      JSON.parse(json);
+    } catch(e){
+      return false;
+    }
+    return true;
+  }
 }
