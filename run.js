@@ -1,66 +1,92 @@
 Helper.loadJSON(function(rawData){
-  var activityData = Helper.restructure(JSON.parse(rawData));
-  displayChart(activityData);
+    var activityData = Helper.restructure(JSON.parse(rawData));
+    displayChart(activityData);
 });
 
-function changeFormat(newFormat){
-  Helper.loadJSON(function(rawData){
-    let newData = Helper.groupDataBy(Helper.restructure(JSON.parse(rawData)), newFormat);
-    displayChart(newData);
+function storeData(data){
+    var element = document.getElementById("activity-data");
+    element.innerHTML = JSON.stringify(data);
+    element.style.display = "none"; // we assure its still hidden
+}
 
-  });
-  return true
+function getData(){
+    let domElementData = document.getElementById("activity-data").innerHTML;
+    console.log("reading element...");
+    console.log(domElementData);
+    //console.log(JSON.parse(domElementData));
+    //console.log(Helper.isJsonValid(JSON.parse(domElementData)));
+    console.log(".");
+    if (domElementData){
+        console.log("data found...");
+        return JSON.parse(domElementData);
+    }
+    return false;
+}
+
+function changeFormat(newFormat){
+    var storedDataString = getData();
+    if(storedDataString){
+        console.log("using stored data");
+        displayChart(Helper.groupDataBy(Helper.restructure(JSON.parse(storedDataString)), newFormat))
+    }else{
+        console.log("using xml data");
+        Helper.loadJSON(function(rawData) {
+            var storedData = Helper.groupDataBy(Helper.restructure(JSON.parse(rawData)), newFormat);
+            displayChart(storedData);
+        });
+    }
 }
 
 function displayChart(data){
-  var ctx = document.getElementById("dataVisualisation").getContext("2d");
-  //TODO: delete if already exists.
-  var options = {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
+    var ctx = document.getElementById("dataVisualisation").getContext("2d");
+    //TODO: delete if already exists.
+    var options = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                gridLines: {
+                    display: true
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
+            }]
         },
-        gridLines: {
-          display: true
-        }
-      }],
-      xAxes: [{
-        gridLines: {
-          display: false
-        }
-      }]
-    },
-    legend: {
-      display: true
-    },
-    responsive: true,
-    maintainAspectRatio: false
-  };
+        legend: {
+            display: true
+        },
+        responsive: true,
+        maintainAspectRatio: false
+    };
 
-  var chart = new Chart(ctx, {
-    type: "line",
-    data: data,
-    options: options
-  });
-  console.log("running...");
+    var chart = new Chart(ctx, {
+        type: "line",
+        data: data,
+        options: options
+    });
+    console.log("running...");
 }
 
 function useUserData(){
-  var input = document.getElementById("userXML");
-  var reader = new FileReader();
-  reader.readAsText(input.files[0], "UTF-8");
-  reader.onload = function(evt){
-    // change form XML to json
-    var data = evt.target.result;
-    var json = convert(data);
-    console.log(json);
-    console.log(typeof json);
-    if (Helper.isJsonValid(JSON.stringify(json))){ // valid
-      var activityData = Helper.restructure(JSON.stringify(json));
-      displayChart(activityData);
-    }else{
-     console.log("USER DATA not valid"); //TODO: show message 
-    } 
-  }
+    var input = document.getElementById("userXML");
+    var reader = new FileReader();
+    reader.readAsText(input.files[0], "UTF-8");
+    reader.onload = function(evt){
+        // change form XML to json
+        var data = evt.target.result;
+        var json = convert(data);
+        var json_string = JSON.stringify(json);
+        if (Helper.isJsonValid(json_string)){ // valid
+            var activityData = Helper.restructure(json);
+            storeData(json_string);
+            displayChart(activityData);
+            console.log(activityData)
+        }else{
+            console.log("USER DATA not valid"); //TODO: show message
+        }
+    }
 }

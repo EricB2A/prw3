@@ -34,9 +34,8 @@ function convertDatetime(rawJSON){
 function convert(rawXML){
     //
     console.log("converting...");
-    var x2js = new X2JS()
+    var x2js = new X2JS();
     var rawJSON = x2js.xml_str2json(rawXML);
     console.log("parsing...");
-    var parsedJSON = convertDatetime(sortKeys(parseJSON(rawJSON.HealthData.Record)));
-    return parsedJSON; 
+    return convertDatetime(sortKeys(parseJSON(rawJSON.HealthData.Record)));
 }

@@ -31,7 +31,12 @@
       <input id="userXML" type="file" onchange="useUserData()" accept=".xml">
     </div>
 
-    <div activity-data='{}' style="display:'hidden'"></div>
+    <div id="activity-data"></div>
 
+    <style>
+      #activity-data {
+        display: none;
+      }
+    </style>
   </body>
 </html>
