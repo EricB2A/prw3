@@ -36,6 +36,11 @@ function loopObject(data_object){
 }
 
 function sortKeys(obj){
+
+    console.log("OBJ");
+    console.log(obj);
+    console.log(typeof obj);
+
     return _(obj).toPairs().sortBy(0).fromPairs().value();
 }
 
@@ -49,6 +54,7 @@ function convertTimestampKeys(obj){
     }
     return result;
 }
+
 function parseJson(raw_json){
     const json = JSON.parse(raw_json);
     const result = convertTimestampKeys(sortKeys(loopObject(json.HealthData.Record)));

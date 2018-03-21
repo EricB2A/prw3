@@ -53,8 +53,11 @@ function useUserData(){
   reader.onload = function(evt){
     // change form XML to json
     var data = evt.target.result;
-    if (Helper.isJsonValid(data)){ // valid
-      var activityData = Helper.restructure(JSON.parse(data));
+    var json = convert(data);
+    console.log(json);
+    console.log(typeof json);
+    if (Helper.isJsonValid(JSON.stringify(json))){ // valid
+      var activityData = Helper.restructure(JSON.stringify(json));
       displayChart(activityData);
     }else{
      console.log("USER DATA not valid"); //TODO: show message 

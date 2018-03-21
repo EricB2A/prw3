@@ -11,6 +11,8 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/locale/fr-ch.js"></script> -->
     <script src="moment.js"></script>
     <script src="helper.js"></script>
+    <script src="xml2json.js"></script>
+    <script src="lodash.js"></script>
 
     <div id="app"></div>
 
@@ -20,13 +22,16 @@
 
     <canvas id="dataVisualisation" width="400" height="400"></canvas>
 
+    <script src="convert.js"></script>
     <script src="run.js"></script>
 
     <!-- user inpt -->
     <div>
-      <span>Use your own json !</span>
-      <input id="userJson" type="file" onchange="useUserData()" accept=".xml">
+      <span>Use your own XML !</span>
+      <input id="userXML" type="file" onchange="useUserData()" accept=".xml">
     </div>
+
+    <div activity-data='{}' style="display:'hidden'"></div>
 
   </body>
 </html>
