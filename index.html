@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>prw3</title>
-  </head>
-  <body>
+</head>
+<body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/locale/fr-ch.js"></script> -->
-    <script src="moment.js"></script>
-    <script src="helper.js"></script>
-    <script src="xml2json.js"></script>
-    <script src="lodash.js"></script>
+<!-- Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="moment.js"></script>
+<script src="helper.js"></script>
+<script src="xml2json.js"></script>
+<script src="lodash.js"></script>
 
-    <div id="app"></div>
+<div id="app"></div>
 
-    <button onclick="changeFormat('YYYY-MM-DD')">YYYY-MM-DD</button>
-    <button onclick="changeFormat('YYYY-MM')">YYYY-MM</button>
-    <button onclick="changeFormat('YYYY')">YYYY</button>
+<div id="buttons">
+    <button onclick="changeFormat('YYYY-MM-DD')" class="button">YYYY-MM-DD</button>
+    <button onclick="changeFormat('YYYY-MM')" class="button">YYYY-MM</button>
+    <button onclick="changeFormat('YYYY')" class="button">YYYY</button>
+</div>
 
-    <canvas id="dataVisualisation" width="400" height="400"></canvas>
+<canvas id="dataVisualisation" width="400" height="400"></canvas>
 
-    <script src="convert.js"></script>
-    <script src="run.js"></script>
+<script src="convert.js"></script>
+<script src="run.js"></script>
 
-    <!-- user inpt -->
-    <div>
-      <span>Use your own XML !</span>
-      <input id="userXML" type="file" onchange="useUserData()" accept=".xml">
-    </div>
+<!-- user input -->
+<div id="loader"></div>
+<div id="user-input">
+    <span>Use your own XML !</span>
+    <input id="userXML" type="file" onchange="useUserData()" accept=".xml">
+</div>
 
-    <div id="activity-data"></div>
+<div id="activity-data"></div>
 
-    <style>
-      #activity-data {
-        display: none;
-      }
-    </style>
-  </body>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</body>
 </html>

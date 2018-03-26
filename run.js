@@ -72,6 +72,7 @@ function displayChart(data){
 }
 
 function useUserData(){
+    Helper.loading(true);
     var input = document.getElementById("userXML");
     var reader = new FileReader();
     reader.readAsText(input.files[0], "UTF-8");
@@ -82,9 +83,9 @@ function useUserData(){
         var json_string = JSON.stringify(json);
         if (Helper.isJsonValid(json_string)){ // valid
             var activityData = Helper.restructure(json);
+            Helper.loading(false);
             storeData(json_string);
             displayChart(activityData);
-            console.log(activityData)
         }else{
             console.log("USER DATA not valid"); //TODO: show message
         }

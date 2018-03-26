@@ -1,0 +1,54 @@
+#activity-data {
+    display: none;
+}
+
+#loader {
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.button {
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+}
+.button2:hover{
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+}
+.button:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+}
