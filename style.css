@@ -30,25 +30,42 @@
     100% { transform: rotate(360deg); }
 }
 
+#buttons {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .button {
     display:inline-block;
     padding:0.5em 3em;
-    border:0.16em solid #FFFFFF;
+    border:0.16em solid #000000;
     margin:0 0.3em 0.3em 0;
     box-sizing: border-box;
     text-decoration:none;
     text-transform:uppercase;
     font-family:'Roboto',sans-serif;
     font-weight:400;
-    color:#FFFFFF;
+    color:#000000;
     text-align:center;
     transition: all 0.15s;
 }
 .button2:hover{
-    color:#DDDDDD;
-    border-color:#DDDDDD;
+    color:#000000;
+    border-color:#000000;
 }
 .button:active{
-    color:#BBBBBB;
-    border-color:#BBBBBB;
+    color:#000000;
+    border-color:#000000;
+
+}
+
+#dataVisualisation {
+    height: 600px !important;
+}
+
+.title {
+    <!-- TODO: self -->
 }

@@ -17,3 +17,7 @@ If you don't have php, use the Firefox browser.
 
 ## License :book:
 This project is licensed under the MIT License - see the [license.md](license.md) file for details
+
+## Todo
+* Store log
+* Tutorial "how to export data"

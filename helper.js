@@ -9,7 +9,7 @@ class Helper {
                 // .open will NOT return a value but simply returns undefined in async mode so use a callback
                 callback(xobj.responseText);
             }
-        }
+        };
         xobj.send(null);
     }
 
@@ -34,7 +34,7 @@ class Helper {
         new_structure.datasets = [];
         new_structure.datasets[0] = {};
         new_structure.datasets[0].label = 'Activity data';
-        new_structure.datasets[0].backgroundColor = '#f87979';
+        new_structure.datasets[0].backgroundColor = this.getRandomColor();
         new_structure.datasets[0].data = [];
         for(let key in data_object) { // looping through our big boy
             if(data_object.hasOwnProperty(key)) {
@@ -107,5 +107,10 @@ class Helper {
         document.getElementById("dataVisualisation").style.display = display ? "none" : "block";
         document.getElementById("user-input").style.display = display ? "none" : "block";
         document.getElementById("buttons").style.display = display ? "none" : "block";
+    }
+
+    static getRandomColor(){
+        let colorList = ["#092140", "#024959", "#F2C777", "#BF2A2A"];
+        return colorList[Math.floor(Math.random() * colorList.length)];
     }
 }

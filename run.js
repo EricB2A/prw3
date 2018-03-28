@@ -39,7 +39,6 @@ function changeFormat(newFormat){
 
 function displayChart(data){
     var ctx = document.getElementById("dataVisualisation").getContext("2d");
-    //TODO: delete if already exists.
     var options = {
         scales: {
             yAxes: [{
@@ -62,7 +61,7 @@ function displayChart(data){
         responsive: true,
         maintainAspectRatio: false
     };
-
+    //TODO: change color
     var chart = new Chart(ctx, {
         type: "line",
         data: data,
