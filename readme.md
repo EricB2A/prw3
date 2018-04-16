@@ -2,7 +2,7 @@
 _The objective of this project is to **self-quantifiy** and **interact** with our daily **activitiy data**._   
 ## Getting started :fire:
 Simply open [index.html](index.html) in your browser.  
-If you have the error `Failed to load... : Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.`, use  
+If you have the error `Failed to load... : Cross origin requests are only supported for ...`, use  
 `python -m SimpleHTTPServer`.   
 and then go to [http://localhost:8000](http://localhost:8000).  
 
