@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>PRW3</title>
+    <title>ActivityData</title>
 </head>
 <body>
-    <script src="../../navGenerator.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,900' rel='stylesheet' type='text/css'>
+    <!-- <script src="../../navGenerator.js"></script> -->
     <!-- Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <script src="moment.js"></script>
@@ -15,14 +16,24 @@
     <script src="lodash.js"></script>
 
     <!-- Display  -->
-    <h1 class="title"> Activity data </h1>
+    <div class="div-header">
+        <h1 class="title"> Activity data </h1>
+        <p>
+            We love to learn about ourselves, dont we ? <br>
+            What if I propose you a simple way to <span class="highlight-yellow"> visualise your data based on your physical activity </span> ? <br>
+            You only need one thing : <span class="highlight-yellow">an iPhone</span> (sorry for the others). <br>
+        </p>
+    </div>
+
     <div id="app"></div>
     <div id="buttons">
         <button onclick="changeFormat('YYYY-MM-DD')" class="button">YYYY-MM-DD</button>
         <button onclick="changeFormat('YYYY-MM')" class="button">YYYY-MM</button>
         <button onclick="changeFormat('YYYY')" class="button">YYYY</button>
     </div>
-    <canvas id="dataVisualisation" width="400" height="200"></canvas>
+    <div class="container">
+        <canvas id="dataVisualisation"></canvas>
+    </div>
 
     <!-- Scripts -->
     <script src="convert.js"></script>
@@ -30,12 +41,32 @@
 
     <!-- User input -->
     <div id="loader"></div>
-    <div id="user-input">
-        <span>Use your own XML !</span>
-        <input id="userXML" type="file" onchange="useUserData()" accept=".xml">
+    <div class="div-user-input">
+        <div id="user-input">
+            <span>Use your own XML !</span>
+            <input id="userXML" type="file" onchange="useUserData()" accept=".xml">
+        </div>
     </div>
+
+    <!-- Temporary stores user input -->
     <div id="activity-data"></div>
 
+    <div class="div-description">
+        <p>
+            How does it works ? <br>
+            The chart is made with <a href="https://www.chartjs.org/">ChartJS</a>, which allow us to create <a href="http://www.chartjs.org/samples/latest/">many charts</a> in few lines of code. <br>
+            Everything else is made with vanilla javascript.<br>
+        </p>
+    </div>
+    <div class="seperate"></div>
+    <div class="div-about">
+        <p>
+            What about me ? <br>
+            This project is a school assignment where we propose a solution in order to <b>interact with data</b>. <br>
+            I am a currently student <a href="https://github.com/CPNV-ES">@CPNV-ES</a> <br>
+            You can find more of my other schools projects on <a href="https://github.com/EricBroutba">my Github</a><br>
+        </p>
+    </div>
     <link rel="stylesheet" type="text/css" href="style.css">
 </body>
 </html>

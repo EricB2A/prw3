@@ -62,11 +62,102 @@
 
 }
 
-#dataVisualisation {
-    height: 600px !important;
+h1 {
+    color: #ffffff;
+    font-family: 'Source Sans Pro';
+    font-size: 120px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: -0.03em;
+    margin-bottom: 36px;
+    margin-top: 0px;
+    padding-top: 100px;
+    padding-left: 50px;
 }
 
-.title {
-    <!-- TODO: self -->
+h1:before {
+    background: #111;
+    content: '';
+    display: block;
+    height: 18px;
+    margin-bottom: 36px;
+    width: 64px;
 }
 
+p {
+    color: #fff;
+    font-family: 'Source Sans Pro';
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+
+}
+
+a {
+    color: #fff;	border-bottom: 4px solid #fff;
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 4px solid #111;
+    color: #111;
+}
+
+.div-header {
+    background-color: #024959;
+}
+
+.div-header p {
+    margin-bottom: 48px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.div-description {
+    background-color: #BF2A2A;
+}
+
+.div-description p {
+    font-size: 20px;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+.div-about {
+    margin-top: -20px;
+    background-color: #092140;
+}
+
+.seperate {
+    background-color: #F2C777;
+    height: 30px;
+    width: 100%;
+}
+
+.div-about p {
+    font-size: 20px;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+body {
+    margin: 0px;
+}
+
+.container {
+    /* Graph canevas heigh */
+    height: 400px;
+}
+
+.highlight-yellow {
+    color: #F2C777;
+}

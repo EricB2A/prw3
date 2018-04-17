@@ -61,7 +61,7 @@ function displayChart(data){
         responsive: true,
         maintainAspectRatio: false
     };
-    //TODO: change color
+
     var chart = new Chart(ctx, {
         type: "line",
         data: data,
