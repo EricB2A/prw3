@@ -3,7 +3,7 @@
 }
 
 #loader {
-    border-top: 16px solid black;
+    /* border-top: 16px solid black; */
     border-right: 16px solid black;
     border-bottom: 16px solid black;
 
@@ -14,7 +14,7 @@
 
     position:absolute; /*it can be fixed too*/
     left:0; right:0;
-    top:0; bottom:0;
+    bottom:0;
     margin:auto;
 
     /*this to solve "the content will not be cut when the window is smaller than the content": */
@@ -23,6 +23,7 @@
     overflow:auto;
 
     display: none;
+    margin-top: 100px;
 }
 
 @keyframes spin {
@@ -32,7 +33,7 @@
 
 #buttons {
     margin: auto;
-    width: 50%;
+    width: 80%;
     text-align: center;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -46,11 +47,12 @@
     box-sizing: border-box;
     text-decoration:none;
     text-transform:uppercase;
-    font-family:'Roboto',sans-serif;
-    font-weight:400;
+    font-weight:800;
     color:#000000;
     text-align:center;
     transition: all 0.15s;
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
 }
 .button2:hover{
     color:#000000;
