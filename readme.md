@@ -2,8 +2,10 @@
 _The objective of this project is to **self-quantifiy** and **interact** with our daily **activitiy data**._   
 ## Getting started :fire:
 Simply open [index.html](index.html) in your browser.  
-If you have the error `Failed to load... : Cross origin requests are only supported for ...`, use  
-`python -m SimpleHTTPServer`.   
+  
+If you have the error `Failed to load... : Cross origin requests are only supported for ...`   
+use  
+`python -m SimpleHTTPServer`.  
 and then go to [http://localhost:8000](http://localhost:8000).  
 
 If you don't have python, you can use the php alternative.  
@@ -20,4 +22,3 @@ This project is licensed under the MIT License - see the [license.md](license.md
 
 ## Todo
 * Store log
-* Tutorial "how to export data"
