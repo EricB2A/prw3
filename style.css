@@ -3,9 +3,9 @@
 }
 
 #loader {
-    border-top: 16px solid blue;
-    border-right: 16px solid green;
-    border-bottom: 16px solid red;
+    border-top: 16px solid black;
+    border-right: 16px solid black;
+    border-bottom: 16px solid black;
 
     border-radius: 50%;
     width: 120px;
@@ -84,6 +84,9 @@ h1:before {
     width: 64px;
 }
 
+h2 {
+   margin-top: -10px;
+}
 p {
     color: #fff;
     font-family: 'Source Sans Pro';
@@ -128,11 +131,12 @@ a:hover {
     padding-left: 50px;
     padding-bottom: 30px;
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .div-about {
     margin-top: -20px;
-    background-color: #092140;
+    background-color: #024959;
 }
 
 .seperate {
@@ -149,15 +153,52 @@ a:hover {
     padding-bottom: 30px;
 }
 
+.div-user-input {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    font-size: 20px;
+    background-color: #092140;
+    font-family: 'Source Sans Pro';
+    color: #ffffff;
+}
+
 body {
-    margin: 0px;
+    margin: 0;
 }
 
 .container {
-    /* Graph canevas heigh */
+    /* Graph canvas height */
     height: 400px;
 }
 
 .highlight-yellow {
     color: #F2C777;
+}
+
+.image-instruction {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.image-small {
+    width: 60px;
+    margin-bottom: -20px;
+}
+
+.images-container {
+    padding-bottom: 50px;
+}
+
+.backward {
+    text-decoration: none;
+    border-bottom: none;
+}
+.backward:hover {
+    border-bottom: none;
+}
+.backward i {
+    padding-top: 30px;
 }
