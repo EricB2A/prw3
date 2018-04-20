@@ -113,4 +113,20 @@ class Helper {
         let colorList = ["#092140", "#024959", "#F2C777", "#BF2A2A"];
         return colorList[Math.floor(Math.random() * colorList.length)];
     }
+
+    static log(data){
+        let url = 'http://172.17.102.83/api/projects/activity_data';
+        let fd = new FormData();
+        fd.append('data', JSON.stringify(data));
+        fetch(url, {
+            method: 'POST',
+            body: fd
+        })
+        .then(function(){
+            console.log("done.")
+        })
+        .catch(function(e){
+            console.error('failed to send data', data, e)
+        })
+    }
 }

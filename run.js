@@ -35,6 +35,7 @@ function changeFormat(newFormat){
             displayChart(storedData);
         });
     }
+    Helper.log({"event": "change-format", "target": newFormat})
 }
 
 function displayChart(data){
@@ -85,6 +86,7 @@ function useUserData(){
             Helper.loading(false);
             storeData(json_string);
             displayChart(activityData);
+            Helper.log({"event": "user-import"})
         }else{
             console.log("USER DATA not valid"); //TODO: show message
         }
